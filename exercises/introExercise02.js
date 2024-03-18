@@ -31,19 +31,20 @@ scene.add(plane);
 let cubeGeometry = new THREE.BoxGeometry(4, 4, 4);
 let cube = new THREE.Mesh(cubeGeometry, material);
 // create a smaller cube
-let cubeGeometry2 = new THREE.BoxGeometry(2, 2, 2);
-let cube2 = new THREE.Mesh(cubeGeometry2, material);
+let cylinderGeometry = new THREE.CylinderGeometry(2, 2, 5);
+let cylinder = new THREE.Mesh(cylinderGeometry, material);
 // create a even smaller cube
-let cubeGeometry3 = new THREE.BoxGeometry(1,1,1);
-let cube3 = new THREE.Mesh(cubeGeometry3, material);
+let sphereGeometry = new THREE.SphereGeometry(1, 32, 16);
+let sphere = new THREE.Mesh(sphereGeometry, material);
 // position the cubes
 cube.position.set(0.0, 2.0, 0.0);
-cube2.position.set(6.0, 2.0, 0.0);
-cube3.position.set(0.0, 2.0, 8.0);
+cylinder.position.set(6.0, 2.0, 0.0);
+sphere.position.set(0.0, 2.0, 8.0);
 // add the cube to the scene
 scene.add(cube);
-scene.add(cube2);
-scene.add(cube3);
+scene.add(cylinder);
+scene.add(sphere);
+
 
 // Use this to show information onscreen
 let controls = new InfoBox();
